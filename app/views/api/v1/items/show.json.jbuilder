@@ -1,1 +1,1 @@
-json.(@item, :id, :name, :description, :image_url)
+json.partial! 'api/v1/items/item', item: @item

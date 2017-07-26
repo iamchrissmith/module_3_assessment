@@ -8,7 +8,7 @@ RSpec.describe 'GET /api/v1/items' do
 
     expect(response.status).to eq 200
     raw_items = JSON.parse(response.body)
-    raw_item = raw_item.first
+    raw_item = raw_items.first
 
     expect(raw_items).to be_an Array
     expect(raw_items.count).to eq 3
