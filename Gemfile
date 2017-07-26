@@ -7,17 +7,29 @@ gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.0.0"
 gem "jquery-rails"
 gem "turbolinks"
-gem "jbuilder", "~> 2.0"
 gem "faker"
 gem "therubyracer"
 gem "less-rails-bootstrap"
-gem "minitest-rails"
+gem 'jbuilder', '~> 2.6', '>= 2.6.1'
+gem 'haml'
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'vcr'
+  gem 'webmock'
+end
 
 group :development do
   gem "spring"
+  gem "erb2haml"
 end
 
 group :development, :test do
-  gem "minitest-rails-capybara"
   gem "pry", :require => "pry"
+  gem 'rspec-rails', '~> 3.5'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
 end
