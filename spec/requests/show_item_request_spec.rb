@@ -10,13 +10,13 @@ RSpec.describe 'GET /api/v1/items/:id' do
     raw_item = JSON.parse(response.body)
     expect(raw_item).to be_a Hash
     expect(raw_item).to have_key "id"
-    expect(raw_item['id']).to eq Item.last.id
+    expect(raw_item['id']).to eq item.id
     expect(raw_item).to have_key "name"
-    expect(raw_item['name']).to eq params[:item][:name]
+    expect(raw_item['name']).to eq item.name
     expect(raw_item).to have_key "description"
-    expect(raw_item['description']).to eq params[:item][:description]
+    expect(raw_item['description']).to eq item.description
     expect(raw_item).to have_key "image_url"
-    expect(raw_item['image_url']).to eq params[:item][:image_url]
+    expect(raw_item['image_url']).to eq item.image_url
     expect(raw_item).not_to have_key 'created_at'
     expect(raw_item).not_to have_key 'updated_at'
   end
