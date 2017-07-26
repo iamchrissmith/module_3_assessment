@@ -1,11 +1,11 @@
 class Api::V1::ItemsController < ApiController
 
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :destroy]
 
   def create
     item = Item.create(item_params)
     if item.save
-      render :json => item, :except=>  [:created_at, :updated_at] , status: 201
+      render json: item, :except=>  [:created_at, :updated_at] , status: 201
     else
       render json: item.errors, status: 400
     end
@@ -16,6 +16,14 @@ class Api::V1::ItemsController < ApiController
 
   def index
     @items = Item.all
+  end
+
+  def destroy
+    if @item.destroy
+      render json: @item, :except=>  [:created_at, :updated_at] , status: 204
+    else
+      render json: @item.errors, status: 400
+    end
   end
 
   private

@@ -21,5 +21,3 @@ RSpec.describe 'GET /api/v1/items/:id' do
     expect(raw_item).not_to have_key 'updated_at'
   end
 end
-# When I send a GET request to `/api/v1/items/1`
-# I receive a 200 JSON response containing the id, name, description, and image_url but not the created_at or updated_at
