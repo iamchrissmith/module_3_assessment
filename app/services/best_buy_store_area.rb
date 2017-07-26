@@ -1,5 +1,6 @@
 class BestBuyStoreArea
   def initialize(attrs)
+    # binding.pry
     @zip = attrs['search']
     @page = attrs['page'] || 1
     @response = Faraday.get "https://api.bestbuy.com/v1/stores(area(#{zip},25))?format=json&show=storeType,longName,city,distance,phone&page=#{page}&apiKey=#{ENV['best_buy_key']}"
