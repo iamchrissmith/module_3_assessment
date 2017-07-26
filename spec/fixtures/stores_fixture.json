@@ -1,0 +1,72 @@
+"stores": [
+        {
+            "storeType": "Mobile SAS",
+            "name": "CHERRY CREEK MALL",
+            "city": "Denver",
+            "distance": 3.45,
+            "phone": "303-270-9189"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "BELMAR CO",
+            "city": "Lakewood",
+            "distance": 5.31,
+            "phone": "303-742-8039"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "COLORADO BLVD CO",
+            "city": "Denver",
+            "distance": 5.59,
+            "phone": "303-758-5805"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "DENVER WEST CO",
+            "city": "Lakewood",
+            "distance": 8.39,
+            "phone": "303-273-5617"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "WESTMINSTER CO",
+            "city": "Westminster",
+            "distance": 8.52,
+            "phone": "303-426-4434"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "NORTHGLENN CO",
+            "city": "Denver",
+            "distance": 9.14,
+            "phone": "303-252-8677"
+        },
+        {
+            "storeType": "Mobile SAS",
+            "name": "TOWN CENTER AURORA",
+            "city": "Aurora",
+            "distance": 9.73,
+            "phone": "303-326-0848"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "AURORA CO",
+            "city": "Aurora",
+            "distance": 9.79,
+            "phone": "303-338-5797"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "LITTLETON CO",
+            "city": "Lakewood",
+            "distance": 10.44,
+            "phone": "303-932-7830"
+        },
+        {
+            "storeType": "Big Box",
+            "name": "SOUTHGLENN CO",
+            "city": "Centennial",
+            "distance": 11.02,
+            "phone": "303-797-3246"
+        }
+    ]

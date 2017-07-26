@@ -1,0 +1,5 @@
+= form_tag search_path, method: :get, class: "navbar-form navbar-right", role: "search" do
+  %p
+    = label_tag 'search', "Find Stores near your ZIP"
+    = text_field_tag :search, params[:search], class: "form-control"
+    = submit_tag "Search", name: nil, class: "btn btn-default"
