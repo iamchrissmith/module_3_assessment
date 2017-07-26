@@ -1,0 +1,11 @@
+%h2= "Stores within 25 miles of #{@results.zip}"
+%h3= "#{@results.total_count} Total Stores"
+
+
+- @results.stores.each do |store|
+  .store
+    %p= "Name: #{store.name}"
+    %p= "City: #{store.city}"
+    %p= "Distance: #{store.distance}"
+    %p= "Phone Number: #{store.phone}"
+    %p= "Store Type: #{store.type}"
