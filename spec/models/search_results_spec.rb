@@ -46,6 +46,7 @@ RSpec.describe 'SearchResults' do
         VCR.use_cassette('SearchResults.stores') do
           expect(search_results).to respond_to(:stores)
           expect(search_results.stores).to be_a Array
+          expect(search_results.stores.count).to eq 10
         end
       end
     end
