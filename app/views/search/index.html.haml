@@ -1,6 +1,11 @@
 %h2= "Stores within 25 miles of #{@results.zip}"
 %h3= "#{@results.total_count} Total Stores"
-
+%p
+  - if @results.page > 1
+    = link_to "Previous Page", search_path(search: @results.zip, page: @results.page - 1)
+  = "Page #{@results.page} of #{@results.total_pages}"
+  - if @results.page < @results.total_pages
+    = link_to "Next Page", search_path(search: @results.zip, page: @results.page + 1)
 
 - @results.stores.each do |store|
   .store

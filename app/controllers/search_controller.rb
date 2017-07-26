@@ -1,5 +1,8 @@
 class SearchController < ApplicationController
   def index
-    @results = SearchResults.new(params['search'])
+    page = params['page'] || 1
+    @results = SearchResults.new(params['search'], page)
   end
+
+
 end
