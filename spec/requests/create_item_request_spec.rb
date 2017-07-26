@@ -9,8 +9,9 @@ RSpec.describe 'POST /api/v1/items' do
       }}
 
     expect {
-      post '/api/v1/items/', params: params
-    }.to change{Item.count}.by(2)
+      post '/api/v1/items/', params
+    }.to change{Item.count}.by(1)
+
     expect(response.status).to eq 201
     raw_item = JSON.parse(response.body)
     expect(raw_item).to be_a Hash
