@@ -12,6 +12,8 @@ gem "therubyracer"
 gem "less-rails-bootstrap"
 gem 'jbuilder', '~> 2.6', '>= 2.6.1'
 gem 'haml'
+gem 'faraday', '~> 0.12.2'
+gem 'figaro'
 
 group :test do
   gem 'simplecov', :require => false
