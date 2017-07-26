@@ -5,14 +5,13 @@ class Api::V1::ItemsController < ApiController
   def create
     item = Item.create(item_params)
     if item.save
-      redirect_to api_v1_item_path(item)
+      render :json => item, :except=>  [:created_at, :updated_at] , status: 201
     else
       render json: item.errors, status: 400
     end
   end
 
   def show
-
   end
 
   private
