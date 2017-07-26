@@ -12,6 +12,9 @@ class Api::V1::ItemsController < ApiController
   end
 
   def show
+    unless @item
+      render json: {error: "Item not found"}, status: 404
+    end
   end
 
   def index
@@ -23,7 +26,7 @@ class Api::V1::ItemsController < ApiController
       @item.destroy
       render json: {success:"Item deleted"}, status: 204
     else
-      render json: {error: "Item not found"}, status: 400
+      render json: {error: "Item not found"}, status: 404
     end
   end
 
