@@ -1,8 +1,10 @@
 class SearchController < ApplicationController
   def index
-    page = params['page'] || 1
-    @results = SearchResults.new(params['search'], page)
+    @results = SearchResults.new(search_params)
   end
 
-
+  private
+    def search_params
+      params.permit(:search, :page)
+    end
 end

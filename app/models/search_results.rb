@@ -4,21 +4,21 @@ class SearchResults
               :page,
               :total_pages
 
-  def initialize(zip, page)
-    @page = page.to_i
-    @zip = zip
-    @response = Faraday.get "https://api.bestbuy.com/v1/stores(area(#{zip},25))?format=json&show=storeType,longName,city,distance,phone&page=#{page}&apiKey=#{ENV['best_buy_key']}"
-    @total_count = JSON.parse(response.body)['total']
-    @total_pages = JSON.parse(response.body)['totalPages']
+  def initialize(attrs)
+    @zip = attrs['search']
+    @page = attrs['page'].to_i || 1
+    @bestbuy_search = BestBuyStoreArea.new(attrs)
+    @total_count = bestbuy_search.total_count
+    @total_pages = bestbuy_search.total_pages.to_i
   end
 
   def stores
-    JSON.parse(response.body)['stores'].map do |store|
+    bestbuy_search.stores.map do |store|
       Store.new(store)
     end
   end
 
 
   private
-    attr_reader :response
+    attr_reader :response, :bestbuy_search
 end
