@@ -19,10 +19,11 @@ class Api::V1::ItemsController < ApiController
   end
 
   def destroy
-    if @item.destroy
-      render json: @item, :except=>  [:created_at, :updated_at] , status: 204
+    if @item
+      @item.destroy
+      render json: {success:"Item deleted"}, status: 204
     else
-      render json: @item.errors, status: 400
+      render json: {error: "Item not found"}, status: 400
     end
   end
 
